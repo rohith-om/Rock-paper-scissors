@@ -7,7 +7,7 @@ Tensorflow
 OpenCV
 Set up instructions
 Clone the repo.
-$ git clone https://github.com/SouravJohar/rock-paper-scissors.git
+$ git clone https://github.com/tech-axis/rock-paper-scissors.git
 $ cd rock-paper-scissors
 Install the dependencies
 $ pip install -r requirements.txt
