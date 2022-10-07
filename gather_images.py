@@ -1,4 +1,4 @@
-desc = '''Script to gather data images with a particular label.
+Idesc = '''Script to gather data images with a particular label.
 Usage: python gather_images.py <label_name> <num_samples>
 The script will collect <num_samples> number of images and store them
 in its own directory.
@@ -11,6 +11,8 @@ Press 'q' to quit.
 import cv2
 import os
 import sys
+Import math
+Import nmap
 
 try:
     label_name = sys.argv[1]
@@ -65,6 +67,11 @@ while True:
 
     if k == ord('q'):
         break
+if move1 == "rock":
+        if move2 == "scissors":
+            return "User"
+        if move2 == "paper":
+            return "Computer"
 
 print("\n{} image(s) saved to {}".format(count, IMG_CLASS_PATH))
 cap.release()
