@@ -86,6 +86,10 @@ while True:
                 (50, 50), font, 1.2, (255, 255, 255), 2, cv2.LINE_AA)
     cv2.putText(frame, "Computer's Move: " + computer_move_name,
                 (750, 50), font, 1.2, (255, 255, 255), 2, cv2.LINE_AA)
+    cv2.putText(frame, "Your Move: " + user_move_name,
+                (50, 50), font, 1.2, (255, 255, 255), 2, cv2.LINE_AA)
+    cv2.putText(frame, "Computer's Move: " + computer_move_name,
+                (850, 60), font, 1.2, (355, 355, 355), 2, cv2.LINE_AA)
     cv2.putText(frame, "Winner: " + winner,
                 (400, 600), font, 2, (0, 0, 255), 4, cv2.LINE_AA)
 
