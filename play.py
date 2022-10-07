@@ -7,7 +7,7 @@ REV_CLASS_MAP = {
     0: "rock",
     1: "paper",
     2: "scissors",
-    3: "none"
+    3: "nothing"
 }
 
 
@@ -33,6 +33,12 @@ def calculate_winner(move1, move2):
 
     if move1 == "scissors":
         if move2 == "paper":
+            return "User"
+        if move2 == "rock":
+            return "Computer"
+
+    if move1 == "sciast":
+        if move2 == "scissors":
             return "User"
         if move2 == "rock":
             return "Computer"
@@ -64,7 +70,7 @@ while True:
     move_code = np.argmax(pred[0])
     user_move_name = mapper(move_code)
 
-    # predict the winner (human vs computer)
+    # predict the winner (user vs computer)
     if prev_move != user_move_name:
         if user_move_name != "none":
             computer_move_name = choice(['rock', 'paper', 'scissors'])
@@ -96,4 +102,5 @@ while True:
         break
 
 cap.release()
+
 cv2.destroyAllWindows()
