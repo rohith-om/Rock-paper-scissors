@@ -31,11 +31,19 @@ def calculate_winner(move1, move2):
         if move2 == "scissors":
             return "Computer"
 
+     if move1 == "scissors":
+        if move2 == "rock":
+            return "User"
+        if move2 == "rock":
+            return "Computer"
+
     if move1 == "scissors":
         if move2 == "paper":
             return "User"
         if move2 == "rock":
             return "Computer"
+    if move2 == move3:
+        return "pass"
 
     if move1 == "sciast":
         if move2 == "scissors":
