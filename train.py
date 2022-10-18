@@ -92,6 +92,33 @@ dataset = [
 
     [[...], 'paper'],
 
+
+'''
+data, labels = zip(*dataset)
+labels = list(map(mapper, labels))
+
+
+'''
+labels: rock,paper,paper,scissors,rock...
+one hot encoded: [1,0,0], [0,1,0], [0,1,0], [0,0,1], [1,0,0]...
+'''
+
+# one hot encode the labels
+labels = np_utils.to_categorical(labels)
+
+# define the model
+model = get_model()
+model.compile(
+    optimizer=Adam(lr=0.0001),
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# start training
+model.fit(np.array(data), np.array(labels), epochs=10)
+
+# save the model for later use
+model.save("rock-paper-scissors-model.h5")
     ...
 
 ]
