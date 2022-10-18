@@ -56,22 +56,26 @@ while True:
         cv2.imwrite(save_path, roi)
         count += 1
 
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(frame, "Collecting {}".format(count),
-            (5, 50), font, 0.7, (0, 255, 255), 2, cv2.LINE_AA)
-    cv2.imshow("Collecting images", frame)
+   Set < Integer > hashSet = new HashSet < Integer > ();
+        for (int num: arr) {
+            hashSet.add(num);
+        }
 
-    k = cv2.waitKey(10)
-    if k == ord('a'):
-        start = not start
+        int longestStreak = 0;
 
-    if k == ord('q'):
-        break
-if move1 == "rock":
-        if move2 == "scissors":
-            return "User"
-        if move2 == "paper":
-            return "Computer"
+        for (int num: arr) {
+            if (!hashSet.contains(num - 1)) {
+                int currentNum = num;
+                int currentStreak = 1;
+
+                while (hashSet.contains(currentNum + 1)) {
+                    currentNum += 1;
+                    currentStreak += 1;
+                }
+
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+        }
 
 print("\n{} image(s) saved to {}".format(count, IMG_CLASS_PATH))
 cap.release()
