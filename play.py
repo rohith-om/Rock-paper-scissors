@@ -50,6 +50,30 @@ def calculate_winner(move1, move2):
             return "User"
         if move2 == "rock":
             return "Computer"
+        
+        // your code here
+        if(arr.length==1)
+            System.out.println("0");
+            
+        if(arr[0]==0)
+            System.out.println("-1");
+        
+        int jump=0,halt=0;
+        int maxDist=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]+i>=maxDist)
+                maxDist=arr[i]+i;
+            
+            if(i==halt)
+            {
+                halt=maxDist;
+                jump++;
+                if(halt>=arr.length-1)
+                    break;
+            }
+        }
+       int ab =  (halt>=arr.length-1)?jump:-1;
 
 
 model = load_model("rock-paper-scissors-model.h5")
